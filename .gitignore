@@ -1,2 +1,4 @@
 /.idea
 /wp-content/plugins/
+/node_modules/
+/vendor/

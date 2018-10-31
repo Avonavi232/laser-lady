@@ -19,14 +19,17 @@
  */
 
 // ** Параметры MySQL: Эту информацию можно получить у вашего хостинг-провайдера ** //
-/** Имя базы данных для WordPress */
-define('DB_NAME', 'laserlady');
 
-/** Имя пользователя MySQL */
-define('DB_USER', 'root');
+if ( $_SERVER['HTTP_HOST'] == 'laser-lady.loc' ) {
+	define( 'WP_SITEURL', 'http://laser-lady.loc' );
+	define( 'WP_HOME', 'http://laser-lady.loc' );
 
-/** Пароль к базе данных MySQL */
-define('DB_PASSWORD', '123QWEasd');
+	define('DB_NAME', 'laserlady');
+	define('DB_USER', 'root');
+	define('DB_PASSWORD', '123QWEasd');
+}
+
+
 
 /** Имя сервера MySQL */
 define('DB_HOST', 'localhost');
@@ -83,6 +86,17 @@ define('WP_DEBUG', false);
 /** Абсолютный путь к директории WordPress. */
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
+
+
+if (file_exists(ABSPATH . 'vendor/autoload.php')){
+	require_once(ABSPATH . 'vendor/autoload.php');
+}
+
+// make PC class available in global PHP scope
+if ( ! class_exists( 'PC', false ) && class_exists( 'PhpConsole\Helper') ) {
+	PhpConsole\Helper::register();
+}
+
 
 /** Инициализирует переменные WordPress и подключает файлы. */
 require_once(ABSPATH . 'wp-settings.php');
