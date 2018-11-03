@@ -110,16 +110,6 @@ $m-element-block-mob: 40px
   h3, .h3
     font-size: $font-size-base * 1.25
 
-.f-center-column
-  display: flex
-  align-items: center
-  flex-direction: column
-
-.shadow-wrapper
-  @include margins(b-inner)
-  background-color: #fff
-  box-shadow: 1px 1px 6px 2px rgba(0, 0, 0, 0.06)
-
 h1,h2,h3,h4,h5,h6
   margin-top: 0
   margin-bottom: 0
@@ -145,10 +135,29 @@ h1,h2,h3,h4,h5,h6
     text-decoration: none
     border-bottom-color: $blue
 
+.graybox
+  height: 100px
+  width: 100px
+  background-color: $gray
+
 
 body
   @include media-breakpoint-down(sm)
     font-size: $font-size-base * 0.875
+
+//Page
+html,
+body
+  height: 100%
+
+.page
+  display: flex
+  flex-direction: column
+  height: 100%
+  &__main
+    flex: 1 0 auto
+  &__footer
+    flex: 0 0 auto
 
 //Button
 .btn
@@ -198,6 +207,68 @@ body
   a:visited, a:active, a:focus
     color: white
     outline: none
+
+//Header
+.header
+  color: $gray
+  &__upper
+    border-bottom: 1px solid $gray
+    padding: 1rem 0
+  &__upper-flex
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+
+//Company-info
+.company-info
+  text-align: left
+  &__item
+    font-size: 0.8rem
+    margin: 0
+  &__separator
+    display: inline-block
+    font-size: 0.8rem
+    margin: .5rem 0 .3rem
+    border-bottom: 1px solid $gray
+    width: 60%
+
+
+//Company-links
+.company-links
+  text-align: right
+  &__item
+    font-size: 0.8rem
+    margin: 0
+
+
+//Menu
+.header-nav
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

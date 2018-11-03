@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('PlayfairDisplay-Regular.woff2') format('woff2'),
+        url('PlayfairDisplay-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Old Standard TT';
+    src: url('OldStandardTT-Regular.woff2') format('woff2'),
+        url('OldStandardTT-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cormorant';
+    src: url('Cormorant-Regular.woff2') format('woff2'),
+        url('Cormorant-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('Roboto-Regular.woff2') format('woff2'),
+        url('Roboto-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+

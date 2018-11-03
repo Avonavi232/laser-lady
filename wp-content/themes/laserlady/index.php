@@ -14,12 +14,8 @@
 
 get_header();
 ?>
-
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
-            <h1>hello world</h1>
-		</main>
-	</div>
-
+    <main class="page__main">
+        <h1>hello world</h1>
+    </main>
 <?php
 get_footer();

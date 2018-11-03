@@ -47,13 +47,78 @@ if ( ! function_exists( 'laserlady_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'laserlady_setup' );
 
+/*Remove autoformatting in the text editor*/
+remove_filter('the_content', 'wpautop');
+remove_filter('the_excerpt', 'wpautop');
+
+/*Clean head from unnescessary tags*/
+remove_action('wp_head', 'wp_generator');
+remove_action('wp_head', 'wlwmanifest_link');
+remove_action('wp_head', 'rsd_link');
+remove_action('wp_head', 'feed_links_extra', 3);
+remove_action('wp_head', 'feed_links', 2);
+remove_action('wp_head', 'wp_shortlink_wp_head');
+remove_action('wp_head', 'adjacent_posts_rel_link_wp_head');
+remove_action('wp_head', 'rel_canonical');
+remove_action('wp_head', 'index_rel_link');
+
+//Delete emoji
+add_filter('emoji_svg_url', '__return_false');
+function disable_emojicons_tinymce($plugins) {
+	if (is_array($plugins)) {
+		return array_diff($plugins, array('wpemoji'));
+	} else {
+		return array();
+	}
+}
+
+function disable_wp_emojicons() {
+	remove_action('admin_print_styles', 'print_emoji_styles');
+	remove_action('wp_head', 'print_emoji_detection_script', 7);
+	remove_action('admin_print_scripts', 'print_emoji_detection_script');
+	remove_action('wp_print_styles', 'print_emoji_styles');
+	remove_filter('wp_mail', 'wp_staticize_emoji_for_email');
+	remove_filter('the_content_feed', 'wp_staticize_emoji');
+	remove_filter('comment_text_rss', 'wp_staticize_emoji');
+
+	add_filter('tiny_mce_plugins', 'disable_emojicons_tinymce');
+}
+
+add_action('init', 'disable_wp_emojicons');
+
+
+function remove_comments_from_admin_page() {
+	remove_menu_page('edit-comments.php');
+}
+
+add_action('admin_menu', 'remove_comments_from_admin_page');
+
+
 
 /**
  * Enqueue scripts and styles.
  */
 function laserlady_scripts() {
-	wp_enqueue_style( 'laserlady-style', get_stylesheet_uri() );
+	wp_enqueue_style(
+		'fonts',
+		( get_template_directory_uri() . '/public/fonts/fonts.css' ),
+		array(),
+		filemtime( get_template_directory() . '/public/fonts/fonts.css' )
+	);
+
+	wp_enqueue_style(
+		'styles',
+		( get_template_directory_uri() . '/style.css' ),
+		array(),
+		filemtime( get_template_directory() . '/style.css' )
+	);
 }
 add_action( 'wp_enqueue_scripts', 'laserlady_scripts' );
+
+//Menu
+add_action( 'after_setup_theme', 'theme_register_nav_menu' );
+function theme_register_nav_menu() {
+	register_nav_menu( 'primary', 'Primary Menu' );
+}
 
 

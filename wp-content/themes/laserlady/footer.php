@@ -1,7 +1,6 @@
-	</div><!-- #content -->
-
-	<footer id="colophon" class="site-footer">
-	</footer>
+    <footer class="page__footer">
+        footer
+    </footer>
 </div>
 
 <?php wp_footer(); ?>
