@@ -1,57 +1,83 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-    <meta charset="<?php bloginfo( 'charset' ); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="<?php bloginfo( 'charset' ); ?>">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php wp_head(); ?>
 </head>
 <body>
 <div class="page">
-    <header class="header page__header">
-        <div class="header__upper">
-            <div class="container">
-                <div class="header__upper-flex">
-                    <div class="company-info">
-                        <p class="company-info__item">Пн-Вс 10:00 - 20:00</p>
-                        <span class="company-info__separator"></span>
-                        <p class="company-info__item">г.Санкт-Петербург</p>
-                        <p class="company-info__item">Владимирский просп., д. 1</p>
-                    </div>
-                    <div class="logo">
-                        <div class="graybox"></div>
-                    </div>
-                    <div class="company-links">
-                        <div class="socials-line company-links__item">
-                            <div class="socials-line__item"></div>
-                            <div class="socials-line__item"></div>
-                        </div>
-                        <div class="company-links__item">+7(999)550-17-45</div>
-                        <div class="company-links__item">studia@gmail.com</div>
-                    </div>
-                </div>
+	<?php
+	$logo = str_replace( site_url(), '', get_template_directory_uri() . '/public/img/logo.svg' );
+
+	if ( file_exists( ABSPATH . $logo ) ) {
+		$logo = file_get_contents( ABSPATH . $logo );
+	} else {
+	  $logo = '';
+  }
+	?>
+
+  <header class="header page__header">
+    <div class="header__upper">
+      <div class="container">
+        <div class="header__upper-flex">
+          <div class="company-info">
+            <p class="company-info__item">Пн-Вс 10:00 - 20:00</p>
+            <span class="company-info__separator"></span>
+            <p class="company-info__item">г.Санкт-Петербург</p>
+            <p class="company-info__item">Владимирский просп., д. 1</p>
+          </div>
+          <div class="logo header__logo">
+            <?php echo $logo?>
+          </div>
+          <div class="company-links">
+            <div class="socials-line company-links__item company-links__socials-line">
+              <div class="socials-line__item">
+                <a href="#" class="socials-line__item-link">
+                  <span class="icon-vk"></span>
+                </a>
+              </div>
+              <div class="socials-line__item">
+                <a href="#" class="socials-line__item-link">
+                  <span class="icon-instagram"></span>
+                </a>
+              </div>
             </div>
+            <div class="company-links__item">
+              <a href="tel:+79995501745" class="company-links__item-link">+7(999)550-17-45</a>
+            </div>
+            <div class="company-links__item">
+              <a href="mailto:studia@gmail.com" class="company-links__item-link">studia@gmail.com</a>
+            </div>
+          </div>
         </div>
-        <nav class="header__nav">
-            <div class="container">
-                <?php
-                $menu_name = 'primary';
-                $locations = get_nav_menu_locations();
-
-                if( $locations && isset($locations[ $menu_name ]) ){
-	                $menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
-	                $menu_items = wp_get_nav_menu_items( $menu );
-
-	                // создаем список
-	                $menu_list = '<ul class="header-nav">';
-
-	                foreach ( (array) $menu_items as $key => $menu_item ){
-		                $menu_list .= '<li class="header-nav__item"><a href="' . $menu_item->url . '">' . $menu_item->title . '</a></li>';
-	                }
-
-	                $menu_list .= '</ul>';
-                  echo $menu_list;
-                }
-                ?>
-            </div>
-        </nav>
-    </header>
+      </div>
+    </div>
+    <nav class="header__nav">
+      <div class="container">
+        <ul class="menu-list">
+          <li class="menu-list__item">
+            <a href="#" class="menu-list__item-link">Лазерная эпиляция</a>
+          </li>
+          <li class="menu-list__item">
+            <a href="#" class="menu-list__item-link">О нас</a>
+          </li>
+          <li class="menu-list__item">
+            <a href="#" class="menu-list__item-link">LP Lazer</a>
+          </li>
+          <li class="menu-list__item">
+            <a href="#" class="menu-list__item-link">Специалисты</a>
+          </li>
+          <li class="menu-list__item">
+            <a href="#" class="menu-list__item-link">Цены</a>
+          </li>
+          <li class="menu-list__item">
+            <a href="#" class="menu-list__item-link">контакты</a>
+          </li>
+          <li class="menu-list__item accent">
+            <a href="#" class="menu-list__item-link">записаться</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>

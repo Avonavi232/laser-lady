@@ -1,4 +1,4 @@
-    <footer class="page__footer">
+    <footer class="page__footer footer">
         footer
     </footer>
 </div>

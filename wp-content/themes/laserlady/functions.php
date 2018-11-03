@@ -107,11 +107,22 @@ function laserlady_scripts() {
 	);
 
 	wp_enqueue_style(
+		'icomoon',
+		( get_template_directory_uri() . '/public/icomoon/style.css' ),
+		array(),
+		filemtime( get_template_directory() . '/public/icomoon/style.css' )
+	);
+
+	wp_enqueue_style(
 		'styles',
 		( get_template_directory_uri() . '/style.css' ),
 		array(),
 		filemtime( get_template_directory() . '/style.css' )
 	);
+
+	wp_deregister_script( 'jquery' );
+	wp_enqueue_script( 'jquery', get_template_directory_uri() . '/bower_components/jquery/dist/jquery.min.js', array(), '', false );
+	wp_enqueue_script( 'main', get_template_directory_uri() . '/public/js/main.js', array(), filemtime( get_template_directory() . '/public/js/main.js' ), true );
 }
 add_action( 'wp_enqueue_scripts', 'laserlady_scripts' );
 

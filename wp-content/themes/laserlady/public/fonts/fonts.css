@@ -1,31 +1,63 @@
 @font-face {
-    font-family: 'Playfair Display';
-    src: url('PlayfairDisplay-Regular.woff2') format('woff2'),
-        url('PlayfairDisplay-Regular.woff') format('woff');
-    font-weight: normal;
+    font-family: 'Old Standard TT';
+    src: url('OldStandardTT-Bold.woff2') format('woff2'),
+        url('OldStandardTT-Bold.woff') format('woff');
+    font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Old Standard TT';
-    src: url('OldStandardTT-Regular.woff2') format('woff2'),
-        url('OldStandardTT-Regular.woff') format('woff');
-    font-weight: normal;
+    font-family: 'Roboto';
+    src: url('Roboto-Light.woff2') format('woff2'),
+        url('Roboto-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('Roboto-Medium.woff2') format('woff2'),
+        url('Roboto-Medium.woff') format('woff');
+    font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Cormorant';
-    src: url('Cormorant-Regular.woff2') format('woff2'),
-        url('Cormorant-Regular.woff') format('woff');
-    font-weight: normal;
+    src: url('Cormorant-Bold.woff2') format('woff2'),
+        url('Cormorant-Bold.woff') format('woff');
+    font-weight: bold;
     font-style: normal;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('PlayfairDisplay-BlackItalic.woff2') format('woff2'),
+        url('PlayfairDisplay-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('Roboto-LightItalic.woff2') format('woff2'),
+        url('Roboto-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
 }
 
 @font-face {
     font-family: 'Roboto';
     src: url('Roboto-Regular.woff2') format('woff2'),
         url('Roboto-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Madelyn';
+    src: url('Madelyn-Regular.woff2') format('woff2'),
+        url('Madelyn-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
