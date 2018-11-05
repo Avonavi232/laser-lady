@@ -57,75 +57,7 @@ $m-element-block-mob: 40px
       margin-top: $m-element-block
 
 
-@mixin icomoon-font()
-  font-family: 'icomoon' !important
-  speak: none
-  font-style: normal
-  font-weight: normal
-  font-variant: normal
-  text-transform: none
-  line-height: 1
-  -webkit-font-smoothing: antialiased
-  -moz-osx-font-smoothing: grayscale
 
-
-.light
-  font-weight: 300
-
-//Font sizes
-@include media-breakpoint-down(sm)
-  h1, .h1
-    margin-bottom: 0
-    font-size: $font-size-base * 1.25
-
-  h2, .h2
-    font-size: $font-size-base * 1.125
-    line-height: 1.5
-    margin-top: -10px
-    margin-bottom: -10px
-
-  h3, .h3
-    margin-bottom: 0
-    font-size: $font-size-base * 0.875
-
-@include media-breakpoint-only(md)
-  h1, .h1
-    margin-bottom: 0
-    font-size: $font-size-base * 2
-
-  h2, .h2
-    font-size: $font-size-base * 1.75
-    margin-top: -10px
-    margin-bottom: -10px
-
-  h3, .h3
-    margin-bottom: 0
-    font-size: $font-size-base * 1.25
-
-
-@include media-breakpoint-up(lg)
-  h1, .h1
-    font-size: $font-size-base * 2.125
-
-  h2, .h2
-    font-size: 4.375rem
-    line-height: 1.5
-
-
-  h3, .h3
-    font-size: $font-size-base * 1.25
-
-h1,h2,h3,h4,h5,h6
-  margin-top: 0
-  margin-bottom: 0
-
-.e-text
-  @include margins(e-text)
-  margin-bottom: 0
-
-.e-text-container p:not(:first-child)
-  margin-bottom: 0
-  @include margins(e-text)
 
 .link
   color: $accent
@@ -142,10 +74,6 @@ h1,h2,h3,h4,h5,h6
   width: 100px
   background-color: $bg-dark
 
-
-body
-  @include media-breakpoint-down(sm)
-    font-size: $font-size-base * 0.875
 
 //Page
 html,
@@ -215,18 +143,16 @@ body
     text-align: center
     color: $headers
 
-//Titles
-.title_1
-  font-family: Roboto, sans-serif
-  font-weight: normal
-  text-transform: uppercase
-  color: $accent
-  
-  
+
 //Bg boxes
 .white-bg
   background-color: #fff
   padding: 50px
+
+//Slick slider outline fix
+.slick-slide
+  &, &:focus
+    outline: none
 
 
 
@@ -237,7 +163,7 @@ body
   color: $text-lighter
   &__upper
     border-bottom: 1px solid #e3e3e3
-    padding: 1rem 0
+    padding: 1em 0
   &__upper-flex
     display: flex
     justify-content: space-between
@@ -248,12 +174,12 @@ body
 .company-info
   text-align: left
   &__item
-    font-size: 0.875rem
+    font-size: 0.875em
     margin: 0
   &__separator
     display: inline-block
-    font-size: 0.875rem
-    margin: .5rem 0 .3rem
+    font-size: 0.875em
+    margin: .5em 0 .3em
     border-bottom: 1px solid #e3e3e3
     width: 60%
 
@@ -262,7 +188,7 @@ body
 .company-links
   text-align: right
   &__item
-    font-size: 0.875rem
+    font-size: 0.875em
     margin: 0
   &__item-link
     transition: all .15s
@@ -278,7 +204,7 @@ body
 .socials-line
   display: flex
   &__item
-    font-size: 1.5rem
+    font-size: 1.5em
     transition: all .15s
     &:not(:last-child)
       margin-right: 10px
@@ -306,7 +232,7 @@ body
   list-style-type: none
   padding: 15px 0
   margin: 0
-  font-size: 1rem
+  font-size: 1em
   text-align: center
   &__item
     display: inline-block
@@ -398,7 +324,7 @@ body
   background-size: cover
   padding-bottom: 70px
   &__subtitle
-    font-size: 1.375rem
+    font-size: 1.375em
     margin-bottom: 10px
   &__content
     padding-left: 130px
@@ -460,6 +386,235 @@ body
 
   &__item-content
     margin-top: 15px
+
+
+//Myths
+@mixin colored-chevron($color)
+  background-image: url('data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20viewBox%3D%220%200%20185.343%20185.343%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Cpath%20style%3D%22fill%3A#{$color}%3B%22%20d%3D%22M51.707%2C185.343c-2.741%2C0-5.493-1.044-7.593-3.149c-4.194-4.194-4.194-10.981%2C0-15.175%0A%09%09%09l74.352-74.347L44.114%2C18.32c-4.194-4.194-4.194-10.987%2C0-15.175c4.194-4.194%2C10.987-4.194%2C15.18%2C0l81.934%2C81.934%0A%09%09%09c4.194%2C4.194%2C4.194%2C10.987%2C0%2C15.175l-81.934%2C81.939C57.201%2C184.293%2C54.454%2C185.343%2C51.707%2C185.343z%22%2F%3E%0A%3C%2Fsvg%3E%0A')
+
+.myths
+  background-image: url('public/img/bg_myths.png')
+  background-size: cover
+  &__slider
+    .slick-controls
+      margin-top: 1em
+      display: flex
+      align-items: center
+    .slick-slides-info
+      display: flex
+      align-items: center
+      margin: 0 .7em
+      font-family: 'Roboto', sans-serif
+      font-style: italic
+      font-weight: 300
+      *:first-child:after
+        content: '/'
+        display: inline-block
+        margin: 0 .4em
+
+    .slick-arrow
+      background-color: transparent
+      border: none
+      font-size: 0
+      padding: 0
+      width: 20px
+      height: 20px
+      background-size: cover
+      @include colored-chevron($text)
+      &:hover, &:focus
+        outline: 0
+      &:hover
+        cursor: pointer
+    .slick-arrow.slick-prev
+      transform: rotate(180deg)
+
+.myth-item
+  &__header
+    border-bottom: 1px solid $accent
+  &__title
+    font-size: 1.375em
+    font-family: 'Roboto', sans-serif
+    font-weight: 300
+    .styled
+      font-family: "Playfair Display", Georgia, "Times New Roman", serif
+      color: $accent
+  &__content
+    padding-top: 1em
+    *:first-child
+      margin-top: 0
+    *:last-child
+      margin-bottom: 0
+
+
+//FAQ
+.faq
+  background-image: url('public/img/bg_faq.png')
+  background-size: cover
+  &__current-q
+    padding-bottom: .7em
+
+.faq-current-q
+  &__question
+    color: $accent
+    font-size: 1.5em
+    font-family: 'Cormorant'
+    font-weight: bold
+    border-bottom: 1px solid $accent
+    &:before
+      content: ''
+      display: inline-block
+      border-radius: 50%
+      background-color: $accent
+      width: 6px
+      height: 6px
+      vertical-align: middle
+      margin-right: .3em
+  &__answer
+    font-weight: 300
+    margin-top: .5em
+
+.faq-questions
+  list-style-type: none
+  padding-left: 0
+  &__item
+    &:before
+      content: ''
+      display: inline-block
+      border-radius: 50%
+      background-color: $accent
+      width: 6px
+      height: 6px
+      vertical-align: middle
+      margin-right: .3em
+    .q
+      display: inline-block
+      vertical-align: middle
+      font-family: 'Cormorant'
+      font-size: 1.5em
+      font-weight: normal
+      border-bottom: 1px solid transparent
+      transition: all .2s
+      &:hover
+        cursor: pointer
+        border-bottom-color: $text
+    .answer
+      display: none
+
+
+//Masters
+.masters-section
+  background-image: url('public/img/bg_benefits.png')
+  background-size: cover
+
+.masters
+  &__slider
+    display: flex
+    align-items: center
+    justify-content: space-between
+    .slick-arrow
+      display: inline-block
+      flex-shrink: 0
+      background-color: transparent
+      border: none
+      font-size: 0
+      padding: 0
+      width: 20px
+      height: 20px
+      background-size: cover
+      @include colored-chevron($accent)
+      &:hover, &:focus
+        outline: 0
+      &:hover
+        cursor: pointer
+    .slick-arrow.slick-next
+      margin-left: 20px
+    .slick-arrow.slick-prev
+      margin-right: 20px
+      transform: rotate(180deg)
+
+.master-item
+  position: relative
+  padding: 2em calc(2em - 15px)
+  &__background
+    background: url('public/img/6656.png') center top
+    background-size: cover
+    position: absolute
+    top: 0
+    right: 0
+    left: 0
+    bottom: 0
+    .container-fluid, .row, [class*="col"]
+      height: 100%
+  &__background-right
+    background: url('public/img/bg_1.png') no-repeat left top
+    background-size: cover
+    background-origin: content-box
+    background-clip: content-box
+    padding-top: 2em
+
+  &__content
+    z-index: 2
+  &__img
+    position: relative
+    z-index: 3
+    img
+      max-width: 100%
+  &__name
+    font-family: 'Old Standard TT'
+    font-size: 1.5em
+    color: $accent
+    text-transform: uppercase
+  &__description-container
+    position: absolute
+    top: 0
+    right: 0
+    left: 0
+    bottom: 0
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+  &__description-content
+    position: relative
+    z-index: 4
+    p
+      &:last-of-type
+        margin-bottom: 0
+  &__description-wrapper
+    background-color: #fff
+    padding: 1em 0 2em
+
+
+//Prices
+.prices-section
+  background-image: url('public/img/bg_prices.png')
+  background-size: cover
+
+.prices-table
+  table
+  thead
+    background-color: $accent
+    color: white
+    font-size: 1.25em
+    font-family: 'Roboto', sans-serif
+    text-transform: uppercase
+  th
+    font-weight: 500
+    padding: .5em
+  tbody
+    td
+      padding-left: 0
+      padding-right: 0
+      padding-top: .5em
+
+      &:first-child
+        padding-left: .5em
+      &:after
+        content: ''
+        margin-top: .5em
+        display: block
+        border-bottom: 1px solid $accent
+
+
 
 
 //Footer

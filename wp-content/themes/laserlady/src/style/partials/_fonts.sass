@@ -1,0 +1,81 @@
+@mixin icomoon-font()
+  font-family: 'icomoon' !important
+  speak: none
+  font-style: normal
+  font-weight: normal
+  font-variant: normal
+  text-transform: none
+  line-height: 1
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+
+//Font sizes
+@include media-breakpoint-down(sm)
+  h1, .h1
+    font-size: $font-size-base * 1.25
+
+  h2, .h2
+    font-size: $font-size-base * 1.125
+
+  h3, .h3
+    font-size: $font-size-base * 0.875
+
+
+@include media-breakpoint-only(md)
+  h1, .h1
+    font-size: $font-size-base * 2
+
+  h2, .h2
+    font-size: $font-size-base * 1.75
+
+  h3, .h3
+    font-size: $font-size-base * 1.25
+
+
+@include media-breakpoint-up(lg)
+  h1, .h1
+    font-size: $font-size-base * 2.125
+
+  h2, .h2
+    font-size: 4.375rem
+
+  h3, .h3
+    font-size: $font-size-base * 1.25
+
+
+html
+  font-size: 10px
+body
+  line-height: 1.5
+  @include media-breakpoint-up(lg)
+    font-size: 16px
+  @include media-breakpoint-down(md)
+    font-size: 14px
+
+p
+  font-size: 1em
+  @include media-breakpoint-up(lg)
+    font-size: 1.1875em
+
+h2, .h2
+  font-family: 'Madelyn', sans-serif
+  font-weight: normal
+  @include media-breakpoint-down(md)
+    font-size: 3em
+  @include media-breakpoint-up(lg)
+    font-size: 4.375em
+
+h3, .h3
+  font-weight: normal
+  font-size: 1.375em
+
+//Titles
+.title_1
+  font-family: Roboto, sans-serif
+  font-weight: normal
+  text-transform: uppercase
+  color: $accent
+
+.light
+  font-weight: 300
