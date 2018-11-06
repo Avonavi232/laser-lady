@@ -3,6 +3,8 @@
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=38b50171-1df9-4bf0-8c68-53ff4817b81f&lang=ru_RU" type="text/javascript">
+  </script>
 	<?php wp_head(); ?>
 </head>
 <body>
@@ -30,7 +32,7 @@
           <div class="logo header__logo">
             <?php echo $logo?>
           </div>
-          <div class="company-links">
+          <div class="company-links header__company-links">
             <div class="socials-line company-links__item company-links__socials-line">
               <div class="socials-line__item">
                 <a href="#" class="socials-line__item-link">

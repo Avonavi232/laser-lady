@@ -149,6 +149,9 @@ body
   background-color: #fff
   padding: 50px
 
+.milk-bg
+  background-color: #fcfcfc
+
 //Slick slider outline fix
 .slick-slide
   &, &:focus
@@ -168,6 +171,8 @@ body
     display: flex
     justify-content: space-between
     align-items: center
+  &__company-links
+    text-align: right
 
 
 //Company-info
@@ -186,7 +191,6 @@ body
 
 //Company-links
 .company-links
-  text-align: right
   &__item
     font-size: 0.875em
     margin: 0
@@ -589,8 +593,41 @@ body
   background-image: url('public/img/bg_prices.png')
   background-size: cover
 
+.prices
+  &__slider
+    display: flex
+    align-items: center
+    justify-content: space-between
+    .slick-arrow
+      display: inline-block
+      flex-shrink: 0
+      background-color: transparent
+      border: none
+      font-size: 0
+      padding: 0
+      width: 20px
+      height: 20px
+      background-size: cover
+      @include colored-chevron($accent)
+      &:hover, &:focus
+        outline: 0
+      &:hover
+        cursor: pointer
+    .slick-arrow.slick-next
+      margin-left: 20px
+    .slick-arrow.slick-prev
+      margin-right: 20px
+      transform: rotate(180deg)
+    .slick-arrow.slick-disabled
+      @include colored-chevron(lighten($accent, 20%))
+      &:hover
+        cursor: default
+  &__item
+    display: flex
+    justify-content: center
+
+
 .prices-table
-  table
   thead
     background-color: $accent
     color: white
@@ -599,28 +636,79 @@ body
     text-transform: uppercase
   th
     font-weight: 500
-    padding: .5em
+    padding: .5em 1em
+    text-align: left
   tbody
-    td
-      padding-left: 0
-      padding-right: 0
-      padding-top: .5em
-
+    position: relative
+    tr
+      padding-left: .5em
       &:first-child
-        padding-left: .5em
-      &:after
-        content: ''
-        margin-top: .5em
-        display: block
-        border-bottom: 1px solid $accent
+        td
+          &:first-child
+            &:before
+              top: 20%
+      &:last-child
+        td
+          &:first-child
+            &:before
+              bottom: 20%
+      &:not(:last-child)
+        td
+          &:after
+            content: ''
+            display: block
+            border-bottom: 1px solid $accent
+    td
+      padding: 0
+      position: relative
+      max-width: 25vw
+      vertical-align: baseline
+      .content
+        display: inline-block
+        padding: .5em 1em .5em 1.2em
+      &:first-child
+        padding-left: 1.2em
+        .content
+          padding-left: 0
+        &:before
+          content: ''
+          display: inline-block
+          position: absolute
+          left: 0
+          top: 0
+          bottom: 0
+          width: 1px
+          border-left: 1px solid $accent
 
 
-
+.contacts-section
+  background-image: url('public/img/bg_benefits.png')
+  background-size: cover
+  &__contacts
+    text-align: left
+    font-size: 1.356em
+    padding: 2em
+    .company-info__separator
+      border-bottom-color: $accent-lighter
 
 //Footer
 .footer
   background-color: $accent
-  height: 200px
+  color: white
+  padding: 3em 0
+  &__flex
+    display: flex
+    align-items: center
+    justify-content: space-between
+  &__logo
+    font-size: 86px
+    path
+      fill: white
+      stroke: white
+  &__company-info
+    margin-right: auto
+    padding: 0 2em
+
 
 
 
