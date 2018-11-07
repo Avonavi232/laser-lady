@@ -217,11 +217,12 @@ get_header();
       <h2 class="section__title decorated-title">Наши мастера</h2>
       <div class="masters__content">
         <div class="masters__slider js-masters-slider">
+
           <div class="masters__item master-item">
             <div class="master-item__background">
               <div class="container-fluid">
                 <div class="row">
-                  <div class="col-sm-5 offset-sm-7 master-item__background-right">
+                  <div class="col-md-5 offset-md-7 master-item__background-right">
                   </div>
                 </div>
               </div>
@@ -231,7 +232,7 @@ get_header();
               <div class="master-item__img">
                 <div class="container-fluid">
                   <div class="row">
-                    <div class="col-sm-7">
+                    <div class="col-md-7">
                       <img src="<?php echo get_template_directory_uri() . '/public/img/img2.png' ?>"
                            alt="">
                     </div>
@@ -242,7 +243,7 @@ get_header();
                 <div class="master-item__description-wrapper">
                   <div class="container-fluid">
                     <div class="row">
-                      <div class="col-sm-5 offset-sm-7">
+                      <div class="col-md-5 offset-md-7">
                         <div class="master-item__description-content">
                           <h3 class="master-item__name">Лидия</h3>
                           <div class="master-item__description">
@@ -257,11 +258,12 @@ get_header();
               </div>
             </div>
           </div>
+
           <div class="masters__item master-item">
             <div class="master-item__background">
               <div class="container-fluid">
                 <div class="row">
-                  <div class="col-sm-5 offset-sm-7 master-item__background-right">
+                  <div class="col-md-5 offset-md-7 master-item__background-right">
                   </div>
                 </div>
               </div>
@@ -271,47 +273,7 @@ get_header();
               <div class="master-item__img">
                 <div class="container-fluid">
                   <div class="row">
-                    <div class="col-sm-7">
-                      <img src="<?php echo get_template_directory_uri() . '/public/img/img1.png' ?>"
-                           alt="">
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="master-item__description-container">
-                <div class="master-item__description-wrapper">
-                  <div class="container-fluid">
-                    <div class="row">
-                      <div class="col-sm-5 offset-sm-7">
-                        <div class="master-item__description-content">
-                          <h3 class="master-item__name">Лидия</h3>
-                          <div class="master-item__description">
-                            <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti esse
-                              expedita, fugiat hic incidunt natus!</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="masters__item master-item">
-            <div class="master-item__background">
-              <div class="container-fluid">
-                <div class="row">
-                  <div class="col-sm-5 offset-sm-7 master-item__background-right">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="master-item__content">
-              <div class="master-item__img">
-                <div class="container-fluid">
-                  <div class="row">
-                    <div class="col-sm-7">
+                    <div class="col-md-7">
                       <img src="<?php echo get_template_directory_uri() . '/public/img/img2.png' ?>"
                            alt="">
                     </div>
@@ -322,7 +284,7 @@ get_header();
                 <div class="master-item__description-wrapper">
                   <div class="container-fluid">
                     <div class="row">
-                      <div class="col-sm-5 offset-sm-7">
+                      <div class="col-md-5 offset-md-7">
                         <div class="master-item__description-content">
                           <h3 class="master-item__name">Лидия</h3>
                           <div class="master-item__description">
@@ -337,6 +299,48 @@ get_header();
               </div>
             </div>
           </div>
+
+          <div class="masters__item master-item">
+            <div class="master-item__background">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-5 offset-md-7 master-item__background-right">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="master-item__content">
+              <div class="master-item__img">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-md-7">
+                      <img src="<?php echo get_template_directory_uri() . '/public/img/img2.png' ?>"
+                           alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="master-item__description-container">
+                <div class="master-item__description-wrapper">
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-md-5 offset-md-7">
+                        <div class="master-item__description-content">
+                          <h3 class="master-item__name">Лидия</h3>
+                          <div class="master-item__description">
+                            <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti esse
+                              expedita, fugiat hic incidunt natus!</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
