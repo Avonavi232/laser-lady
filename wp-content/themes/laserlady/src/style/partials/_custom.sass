@@ -58,7 +58,6 @@ $m-element-block-mob: 40px
 
 
 
-
 .link
   color: $accent
   border-bottom: 1px solid transparent
@@ -68,11 +67,6 @@ $m-element-block-mob: 40px
   &:hover
     text-decoration: none
     border-bottom-color: $accent
-
-.graybox
-  height: 100px
-  width: 100px
-  background-color: $bg-dark
 
 
 //Page
@@ -225,11 +219,15 @@ body
 
 //Logo
 .logo
-  font-size: 100px
+  font-size: 60px
   svg
     display: block
     height: 1em
     width: 1.43em
+  @include media-breakpoint-down(xs)
+    display: none
+  @include media-breakpoint-up(lg)
+    font-size: 100px
 
 //Menu
 .menu-list
@@ -243,6 +241,7 @@ body
     color: $black
     padding: 0
     margin: 0
+    line-height: 2.2
     &:not(:last-of-type)
       &:after
         content: '/'
@@ -346,6 +345,13 @@ body
     z-index: 2
     img
       max-width: 100%
+  @include media-breakpoint-down(sm)
+    &__image-wrapper
+      margin-top: 2em
+    &__image-container
+      position: static
+    &__content
+      padding: 1.5em
 
 //Benefits
 .benefits-section
@@ -690,6 +696,72 @@ body
     padding: 2em
     .company-info__separator
       border-bottom-color: $accent-lighter
+
+
+
+
+//Sign Up form
+.sign-up-section
+  background-image: url('public/img/bg_form.png')
+  background-size: cover
+
+.contact-form
+  .wpcf7-list-item
+    margin: 0
+  &__input
+    input, textarea
+      width: 100%
+      border: 1px solid $text-lighter
+      font-size: 1em
+      padding: .5em
+      transition: all .2s
+      color: $text
+      &:focus
+        outline: none
+        border-color: $accent-lighter
+      &::placeholder
+        opacity: 1
+        color: $text-lighter
+    & + p
+      display: none
+    textarea
+      resize: none
+      height: 100%
+    &:not(:last-of-type)
+      margin-bottom: 1.1em
+  &__textarea-wrapper
+    position: absolute
+    top: 0
+    bottom: 0
+  &__acceptance
+    display: inline-block
+    margin-top: 1.1em
+    color: $text-lighter
+    font-size: 0.875em
+  &__submit
+    display: block
+    margin-top: 0.3em
+    input, button
+      background-color: white
+      border: 1px solid $accent-lighter
+      display: inline-block
+      cursor: pointer
+      color: $accent-lighter
+      font-size: 1em
+      padding: .5em 1em
+      text-decoration: none
+      transition: all .2s
+      &:disabled
+        border-color: lighten($accent-lighter, 20%)
+        color: lighten($accent-lighter, 20%)
+        &:hover
+          cursor: default
+      &:hover:not(:disabled)
+        background-color: $accent-lighter
+        color: white
+
+
+
 
 //Footer
 .footer
