@@ -20,13 +20,8 @@ get_header();
     <div class="banners-slider__container">
       <div class="js-banners-slider">
         <div class="banners-slider__item">
-          <img src="<?php echo get_template_directory_uri() . '/public/img/slide1.png' ?>" alt="slide">
-        </div>
-        <div class="banners-slider__item">
-          <img src="<?php echo get_template_directory_uri() . '/public/img/slide1.png' ?>" alt="slide">
-        </div>
-        <div class="banners-slider__item">
-          <img src="<?php echo get_template_directory_uri() . '/public/img/slide1.png' ?>" alt="slide">
+          <div class="banners-slider__item">
+          </div>
         </div>
       </div>
     </div>
@@ -355,23 +350,97 @@ get_header();
             <table>
               <thead>
               <tr>
-                <th>Нижняя часть тела</th>
+                <th>Лицо</th>
                 <th>Цена</th>
               </tr>
               </thead>
               <tbody>
               <tr>
-                <td><span class="content">Ягодицы</span></td>
-                <td><span class="content">1600</span></td>
+                <td><span class="content">Лицо полностью</span></td>
+                <td><span class="content">2000</span></td>
               </tr>
               <tr>
-                <td><span class="content">Голени</span></td>
-                <td><span class="content">1600</span></td>
+                <td><span class="content">Щеки</span></td>
+                <td><span class="content">500</span></td>
               </tr>
               <tr>
-                <td><span class="content">Передняя поверхность бедра Lorem ipsum dolor sit amet, consectetur.</span>
+                <td colspan="2">
+                  <div class="content bold centered">Шея</div>
                 </td>
-                <td><span class="content">100</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Передняя поверхность</span></td>
+                <td><span class="content">500</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Задняя поверхность</span></td>
+                <td><span class="content">500</span></td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <span class="content"> </span>
+                </td>
+              </tr>
+              <tr>
+                <td><span class="content">Бакенбарды</span></td>
+                <td><span class="content">400</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Лоб</span></td>
+                <td><span class="content">400</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Верхняя губа</span></td>
+                <td><span class="content">400</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Крылья носа</span></td>
+                <td><span class="content">300</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Подбородок</span></td>
+                <td><span class="content">300</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Нижняя губа</span></td>
+                <td><span class="content">200</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Межбровье</span></td>
+                <td><span class="content">200</span></td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <div class="content bold centered">Комплексы</div>
+                </td>
+              </tr>
+              <tr>
+                <td><span class="content">Губы + подбородок</span></td>
+                <td><span class="content">800</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Щеки + бакенбарды</span></td>
+                <td><span class="content">800</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Шея полностью</span></td>
+                <td><span class="content">800</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Верхняя губа + подбородок</span></td>
+                <td><span class="content">500</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Верхняя губа + крылья носа</span></td>
+                <td><span class="content">500</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Верхняя губа + нижняя губа</span></td>
+                <td><span class="content">500</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Лоб + межбровье</span></td>
+                <td><span class="content">500</span></td>
               </tr>
               </tbody>
             </table>
@@ -382,36 +451,99 @@ get_header();
             <table>
               <thead>
               <tr>
-                <th>Нижняя часть тела</th>
+                <th>Тело (верхняя часть)</th>
                 <th>Цена</th>
               </tr>
               </thead>
               <tbody>
               <tr>
-                <td><span class="content">Ягодицы</span></td>
-                <td><span class="content">1600</span></td>
+                <td><span class="content">Руки полностью</span></td>
+                <td><span class="content">2000</span></td>
               </tr>
               <tr>
-                <td><span class="content">Голени</span></td>
-                <td><span class="content">1600</span></td>
+                <td><span class="content">Руки до локтя</span></td>
+                <td><span class="content">1100</span></td>
               </tr>
               <tr>
-                <td><span class="content">Передняя поверхность бедра Lorem ipsum dolor sit amet, consectetur.</span>
+                <td><span class="content">Плечи</span>
                 </td>
-                <td><span class="content">100</span></td>
+                <td><span class="content">1100</span></td>
               </tr>
               <tr>
-                <td><span class="content">Ягодицы</span></td>
-                <td><span class="content">1600</span></td>
+                <td><span class="content">Подмышки</span></td>
+                <td><span class="content">500</span></td>
               </tr>
               <tr>
-                <td><span class="content">Голени</span></td>
-                <td><span class="content">1600</span></td>
-              </tr>
-              <tr>
-                <td><span class="content">Передняя поверхность бедра Lorem ipsum dolor sit amet, consectetur.</span>
+                <td colspan="2">
+                  <div class="content bold centered">Грудь</div>
                 </td>
-                <td><span class="content">100</span></td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <div class="content bold">Молочные железы</div>
+                </td>
+              </tr>
+              <tr>
+                <td><span class="content">(5) DD</span></td>
+                <td><span class="content">1000</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">(4) D</span></td>
+                <td><span class="content">800</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">(3) C</span></td>
+                <td><span class="content">600</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">(2) B</span></td>
+                <td><span class="content">600</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">(1) A</span></td>
+                <td><span class="content">500</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">(0) AA</span></td>
+                <td><span class="content">500</span></td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <span class="content"> </span>
+                </td>
+              </tr>
+              <tr>
+                <td><span class="content">Зона декольте</span></td>
+                <td><span class="content">800</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Ореолы (вокруг)</span></td>
+                <td><span class="content">300</span></td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <span class="content bold centered">Спина / живот</span>
+                </td>
+              </tr>
+              <tr>
+                <td><span class="content">Спина полностью</span></td>
+                <td><span class="content">2000</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Спина (до поясницы)</span></td>
+                <td><span class="content">1500</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Поясница</span></td>
+                <td><span class="content">700</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Живот полностью</span></td>
+                <td><span class="content">1500</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Линия живота</span></td>
+                <td><span class="content">500</span></td>
               </tr>
               </tbody>
             </table>
@@ -422,23 +554,136 @@ get_header();
             <table>
               <thead>
               <tr>
-                <th>Нижняя часть тела</th>
+                <th>Тело (нижняя часть)</th>
                 <th>Цена</th>
               </tr>
               </thead>
               <tbody>
               <tr>
+                <td><span class="content">Тотальное бикини</span></td>
+                <td><span class="content">1800</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Глубокое бикини</span></td>
+                <td><span class="content">1200</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Бикини по линии белья</span></td>
+                <td><span class="content">600</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Межъягодичная область</span></td>
+                <td><span class="content">600</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Половые губы</span></td>
+                <td><span class="content">400</span></td>
+              </tr>
+              <tr>
+                <td colspan="2"><span class="content bold centered">Ноги</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Ноги полностью + пальчики</span></td>
+                <td><span class="content">3000<br><span class="red bold">(11.18-12.18 акция 2600)</span></span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Ноги полностью</span></td>
+                <td><span class="content">2900<br><span class="red bold">(11.18-12.18 акция 2500)</span></span></td>
+              </tr>
+              <tr>
                 <td><span class="content">Ягодицы</span></td>
-                <td><span class="content">1600</span></td>
+                <td><span class="content">1500</span></td>
               </tr>
               <tr>
                 <td><span class="content">Голени</span></td>
-                <td><span class="content">1600</span></td>
+                <td><span class="content">1500</span></td>
               </tr>
               <tr>
-                <td><span class="content">Передняя поверхность бедра Lorem ipsum dolor sit amet, consectetur.</span>
-                </td>
-                <td><span class="content">100</span></td>
+                <td><span class="content">Бедра полностью</span></td>
+                <td><span class="content">1800</span></td>
+              </tr>
+              <tr>
+                <td colspan="2"><span class="content bold">Поверхность бедра</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Передняя</span></td>
+                <td><span class="content">800</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Задняя</span></td>
+                <td><span class="content">800</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Боковая внутренняя</span></td>
+                <td><span class="content">200</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Боковая наружная</span></td>
+                <td><span class="content">200</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Коленная чашечка</span></td>
+                <td><span class="content">300</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Фаланги пальцев рук/ног</span></td>
+                <td><span class="content">200</span></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div>
+          <div class="prices__item prices-table">
+            <table>
+              <thead>
+              <tr>
+                <th>Комплексы</th>
+                <th>Цена</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td colspan="2"><span class="content bold centered">Комплекс №1</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Ноги полностью</span></td>
+                <td class="middle" rowspan="5"><span class="content">5000</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Тотальное бикини</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Подмышки</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Нижняя часть лица на выбор</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Фаланги пальцев</span></td>
+              </tr>
+              <tr>
+                <td colspan="2"><span class="content bold centered">Комплекс №2</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Ноги полностью</span></td>
+                <td class="middle" rowspan="3"><span class="content">4500</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Тотальное бикини</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Подмышки</span></td>
+              </tr>
+              <tr>
+                <td colspan="2"><span class="content bold centered">Комплекс №3</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Тотальное бикини</span></td>
+                <td class="middle" rowspan="2"><span class="content">2000</span></td>
+              </tr>
+              <tr>
+                <td><span class="content">Подмышки</span></td>
               </tr>
               </tbody>
             </table>
@@ -455,7 +700,9 @@ get_header();
       <div class="container">
         <div class="row milk-bg">
           <div class="col-sm-7">
-<!--            <div id="map" style="width: 600px; height: 400px"></div>-->
+            <div class="contacts-section__map-wrapper">
+              <div class="contacts-section__map" id="map"></div>
+            </div>
           </div>
           <div class="col-sm-5">
             <div class="contacts-section__contacts">
@@ -497,8 +744,8 @@ get_header();
       <h2 class="section__title decorated-title">Записаться можно здесь</h2>
       <div class="sign-up__form contact-form">
 				<?php
-        echo do_shortcode( '[contact-form-7 id="10" title="Записаться можно здесь"]' )
-        ?>
+				echo do_shortcode( '[contact-form-7 id="10" title="Записаться можно здесь"]' )
+				?>
       </div>
     </div>
   </section>

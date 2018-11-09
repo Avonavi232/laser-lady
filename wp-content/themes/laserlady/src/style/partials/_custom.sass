@@ -190,7 +190,13 @@ body
       background-color: $accent-lighter
 
 
-
+@mixin adaptibe-bg($bg-name, $bg-extension: 'png')
+  @include media-breakpoint-up(xl)
+    background-image: url('#{$bg-name}@xl-min.#{$bg-extension}')
+  @include media-breakpoint-between(md, lg)
+    background-image: url('#{$bg-name}@md-min.#{$bg-extension}')
+  @include media-breakpoint-down(sm)
+    background-image: url('#{$bg-name}@sm-min.#{$bg-extension}')
 
 
 //Header
@@ -280,6 +286,11 @@ body
     padding: 0
     margin: 0
     line-height: 2.2
+    h1
+      font-size: inherit
+      font-family: inherit
+      font-weight: inherit
+      display: inline-block
     &:not(:last-of-type)
       &:after
         content: '/'
@@ -299,7 +310,6 @@ body
 .banners-slider
   .slick-slider
     position: relative
-
   .slick-slide:focus
     outline: none
 
@@ -307,15 +317,28 @@ body
     bottom: 0
     font-size: 14px
     @include slick-dots
-
   &__item
-    img
-      max-width: 100%
+    height: 0
+    width: 100%
+    padding-bottom: 30%
+    background-color: #eceeed
+    @include adaptibe-bg('public/img/banner1')
+    background-size: auto 100%
+    background-position: center
+    background-repeat: no-repeat
+    @include media-breakpoint-up(lg)
+      padding-bottom: 25%
+
 
 
 
 //Decorated title
 .decorated-title
+  line-height: 1.2
+  display: flex
+  align-items: center
+  justify-content: center
+  margin-bottom: .2em
   &:before, &:after
     content: ''
     display: inline-block
@@ -328,12 +351,13 @@ body
 
 //What is section
 .what-is
-  background-image: url('public/img/bg_what_is.png')
-  background-size: cover
+  @include adaptibe-bg('public/img/bg_2')
+  background-size: 100% auto
+  background-repeat: no-repeat
 
 //About us section
 .about-us
-  background-image: url('public/img/bg_about_us.png')
+  @include adaptibe-bg('public/img/bg_1')
   background-size: cover
   padding-bottom: 70px
   &__subtitle
@@ -365,7 +389,8 @@ body
 
 //Benefits
 .benefits-section
-  background-image: url('public/img/bg_benefits.png')
+  @include adaptibe-bg('public/img/bg_3')
+  background-size: cover
 
 .benefits
   list-style-type: none
@@ -397,6 +422,8 @@ body
       flex-basis: 50%
     @include media-breakpoint-down(xs)
       flex-basis: 100%
+      &:before
+        left: 22px
 
   &__item-title
     position: relative
@@ -407,6 +434,8 @@ body
       border-bottom: 1px solid $accent
       width: 30%
       margin-top: 10px
+      @include media-breakpoint-down(xs)
+        width: 50%
 
   &__item-content
     margin-top: 15px
@@ -417,7 +446,7 @@ body
   background-image: url('data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20viewBox%3D%220%200%20185.343%20185.343%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Cpath%20style%3D%22fill%3A#{$color}%3B%22%20d%3D%22M51.707%2C185.343c-2.741%2C0-5.493-1.044-7.593-3.149c-4.194-4.194-4.194-10.981%2C0-15.175%0A%09%09%09l74.352-74.347L44.114%2C18.32c-4.194-4.194-4.194-10.987%2C0-15.175c4.194-4.194%2C10.987-4.194%2C15.18%2C0l81.934%2C81.934%0A%09%09%09c4.194%2C4.194%2C4.194%2C10.987%2C0%2C15.175l-81.934%2C81.939C57.201%2C184.293%2C54.454%2C185.343%2C51.707%2C185.343z%22%2F%3E%0A%3C%2Fsvg%3E%0A')
 
 .myths
-  background-image: url('public/img/bg_myths.png')
+  @include adaptibe-bg('public/img/bg_4')
   background-size: cover
   &__slider
     .slick-controls
@@ -475,7 +504,7 @@ body
 
 //FAQ
 .faq
-  background-image: url('public/img/bg_faq.png')
+  @include adaptibe-bg('public/img/bg_5')
   background-size: cover
   &__current-q
     padding-bottom: .7em
@@ -534,7 +563,7 @@ body
 
 //Masters
 .masters-section
-  background-image: url('public/img/bg_benefits.png')
+  @include adaptibe-bg('public/img/bg_3')
   background-size: cover
 
 .masters
@@ -640,7 +669,8 @@ body
 
 //Prices
 .prices-section
-  background-image: url('public/img/bg_prices.png')
+  @include adaptibe-bg('public/img/bg_6')
+  background-position: center bottom
   background-size: cover
 
 .prices
@@ -690,6 +720,8 @@ body
 
 
 .prices-table
+  table
+    width: 100%
   thead
     background-color: $accent
     color: white
@@ -700,6 +732,9 @@ body
     font-weight: 500
     padding: .5em 1em
     text-align: left
+    white-space: nowrap
+    &:not(:first-child)
+      text-align: center
   tbody
     position: relative
     tr
@@ -720,14 +755,28 @@ body
             content: ''
             display: block
             border-bottom: 1px solid $accent
+            position: absolute
+            bottom: 0
+            left: 0
+            right: 0
     td
       padding: 0
       position: relative
       max-width: 25vw
       vertical-align: baseline
+      &.middle
+        vertical-align: middle
       .content
         display: inline-block
         padding: .5em 1em .5em 1.2em
+      .bold
+        font-weight: bold
+      .centered
+        text-align: center
+        width: 100%
+        display: inline-block
+      .red
+        color: $accent-lighter
       &:first-child
         padding-left: 1.2em
         .content
@@ -741,10 +790,11 @@ body
           bottom: 0
           width: 1px
           border-left: 1px solid $accent
-
+      &:not(:first-child)
+        text-align: center
 
 .contacts-section
-  background-image: url('public/img/bg_benefits.png')
+  @include adaptibe-bg('public/img/bg_3')
   background-size: cover
   &__contacts
     text-align: left
@@ -760,14 +810,25 @@ body
       & > *
         text-align: center
         justify-content: center
-
+  &__map
+    position: absolute
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
+  &__map-wrapper
+    height: 100%
+    position: relative
+    @include media-breakpoint-down(xs)
+      height: 0
+      padding-bottom: 100%
 
 
 
 
 //Sign Up form
 .sign-up-section
-  background-image: url('public/img/bg_form.png')
+  @include adaptibe-bg('public/img/bg_2')
   background-size: cover
 
 .contact-form
@@ -824,7 +885,10 @@ body
       &:hover:not(:disabled)
         background-color: $accent-lighter
         color: white
-
+  @include media-breakpoint-down(sm)
+    &__textarea-wrapper
+      margin-top: 1.1em
+      position: static
 
 
 

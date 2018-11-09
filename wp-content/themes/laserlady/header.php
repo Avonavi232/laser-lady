@@ -59,7 +59,7 @@
       <div class="container">
         <ul class="menu-list">
           <li class="menu-list__item">
-            <a href="#" class="menu-list__item-link">Лазерная эпиляция</a>
+            <h1><a href="#" class="menu-list__item-link">Лазерная эпиляция</a></h1>
           </li>
           <li class="menu-list__item">
             <a href="#" class="menu-list__item-link">О нас</a>
