@@ -35,12 +35,12 @@
           <div class="company-links header__company-links">
             <div class="socials-line company-links__item company-links__socials-line">
               <div class="socials-line__item">
-                <a href="#" class="socials-line__item-link">
+                <a target="_blank" href="https://vk.com/laser_lady_spb" class="socials-line__item-link">
                   <span class="icon-vk"></span>
                 </a>
               </div>
               <div class="socials-line__item">
-                <a href="#" class="socials-line__item-link">
+                <a target="_blank" href="https://www.instagram.com/laser_lady_spb/" class="socials-line__item-link">
                   <span class="icon-instagram"></span>
                 </a>
               </div>
@@ -59,25 +59,25 @@
       <div class="container">
         <ul class="menu-list">
           <li class="menu-list__item">
-            <h1><a href="#" class="menu-list__item-link">Лазерная эпиляция</a></h1>
+            <h1><a href="#what-is" class="menu-list__item-link">Лазерная эпиляция</a></h1>
           </li>
           <li class="menu-list__item">
-            <a href="#" class="menu-list__item-link">О нас</a>
+            <a href="#about-us" class="menu-list__item-link">О нас</a>
           </li>
           <li class="menu-list__item">
-            <a href="#" class="menu-list__item-link">LP Lazer</a>
+            <a href="#benefits" class="menu-list__item-link">IPLaser</a>
           </li>
           <li class="menu-list__item">
-            <a href="#" class="menu-list__item-link">Специалисты</a>
+            <a href="#masters" class="menu-list__item-link">Специалисты</a>
           </li>
           <li class="menu-list__item">
-            <a href="#" class="menu-list__item-link">Цены</a>
+            <a href="#prices" class="menu-list__item-link">Цены</a>
           </li>
           <li class="menu-list__item">
-            <a href="#" class="menu-list__item-link">контакты</a>
+            <a href="#contacts" class="menu-list__item-link">контакты</a>
           </li>
           <li class="menu-list__item accent">
-            <a href="#" class="menu-list__item-link">записаться</a>
+            <a href="#sign-up" class="menu-list__item-link">записаться</a>
           </li>
         </ul>
       </div>

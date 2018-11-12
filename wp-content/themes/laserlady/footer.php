@@ -23,12 +23,12 @@ if ( file_exists( ABSPATH . $logo ) ) {
       <div class="company-links footer__company-links">
         <div class="socials-line company-links__item company-links__socials-line">
           <div class="socials-line__item">
-            <a href="#" class="socials-line__item-link">
+            <a target="_blank" href="https://vk.com/laser_lady_spb" class="socials-line__item-link">
               <span class="icon-vk"></span>
             </a>
           </div>
           <div class="socials-line__item">
-            <a href="#" class="socials-line__item-link">
+            <a target="_blank" href="https://www.instagram.com/laser_lady_spb/" class="socials-line__item-link">
               <span class="icon-instagram"></span>
             </a>
           </div>
