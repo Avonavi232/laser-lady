@@ -48,51 +48,50 @@ endif;
 add_action( 'after_setup_theme', 'laserlady_setup' );
 
 /*Remove autoformatting in the text editor*/
-remove_filter('the_content', 'wpautop');
-remove_filter('the_excerpt', 'wpautop');
+remove_filter( 'the_content', 'wpautop' );
+remove_filter( 'the_excerpt', 'wpautop' );
 
 /*Clean head from unnescessary tags*/
-remove_action('wp_head', 'wp_generator');
-remove_action('wp_head', 'wlwmanifest_link');
-remove_action('wp_head', 'rsd_link');
-remove_action('wp_head', 'feed_links_extra', 3);
-remove_action('wp_head', 'feed_links', 2);
-remove_action('wp_head', 'wp_shortlink_wp_head');
-remove_action('wp_head', 'adjacent_posts_rel_link_wp_head');
-remove_action('wp_head', 'rel_canonical');
-remove_action('wp_head', 'index_rel_link');
+remove_action( 'wp_head', 'wp_generator' );
+remove_action( 'wp_head', 'wlwmanifest_link' );
+remove_action( 'wp_head', 'rsd_link' );
+remove_action( 'wp_head', 'feed_links_extra', 3 );
+remove_action( 'wp_head', 'feed_links', 2 );
+remove_action( 'wp_head', 'wp_shortlink_wp_head' );
+remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head' );
+remove_action( 'wp_head', 'rel_canonical' );
+remove_action( 'wp_head', 'index_rel_link' );
 
 //Delete emoji
-add_filter('emoji_svg_url', '__return_false');
-function disable_emojicons_tinymce($plugins) {
-	if (is_array($plugins)) {
-		return array_diff($plugins, array('wpemoji'));
+add_filter( 'emoji_svg_url', '__return_false' );
+function disable_emojicons_tinymce( $plugins ) {
+	if ( is_array( $plugins ) ) {
+		return array_diff( $plugins, array( 'wpemoji' ) );
 	} else {
 		return array();
 	}
 }
 
 function disable_wp_emojicons() {
-	remove_action('admin_print_styles', 'print_emoji_styles');
-	remove_action('wp_head', 'print_emoji_detection_script', 7);
-	remove_action('admin_print_scripts', 'print_emoji_detection_script');
-	remove_action('wp_print_styles', 'print_emoji_styles');
-	remove_filter('wp_mail', 'wp_staticize_emoji_for_email');
-	remove_filter('the_content_feed', 'wp_staticize_emoji');
-	remove_filter('comment_text_rss', 'wp_staticize_emoji');
+	remove_action( 'admin_print_styles', 'print_emoji_styles' );
+	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+	remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+	remove_action( 'wp_print_styles', 'print_emoji_styles' );
+	remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+	remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+	remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
 
-	add_filter('tiny_mce_plugins', 'disable_emojicons_tinymce');
+	add_filter( 'tiny_mce_plugins', 'disable_emojicons_tinymce' );
 }
 
-add_action('init', 'disable_wp_emojicons');
+add_action( 'init', 'disable_wp_emojicons' );
 
 
 function remove_comments_from_admin_page() {
-	remove_menu_page('edit-comments.php');
+	remove_menu_page( 'edit-comments.php' );
 }
 
-add_action('admin_menu', 'remove_comments_from_admin_page');
-
+add_action( 'admin_menu', 'remove_comments_from_admin_page' );
 
 
 /**
@@ -122,8 +121,27 @@ function laserlady_scripts() {
 
 	wp_deregister_script( 'jquery' );
 	wp_enqueue_script( 'jquery', get_template_directory_uri() . '/bower_components/jquery/dist/jquery.min.js', array(), '', false );
+
+	wp_enqueue_script(
+		'bootstrap-js1',
+		get_template_directory_uri() . '/src/bootstrap/js/dist/util.js',
+		array(),
+		false,
+		false
+	);
+
+	wp_enqueue_script(
+		'bootstrap-js2',
+		get_template_directory_uri() . '/src/bootstrap/js/dist/modal.js',
+		array(),
+		false,
+		false
+	);
+
+
 	wp_enqueue_script( 'main', get_template_directory_uri() . '/public/js/main.js', array(), filemtime( get_template_directory() . '/public/js/main.js' ), true );
 }
+
 add_action( 'wp_enqueue_scripts', 'laserlady_scripts' );
 
 //Menu

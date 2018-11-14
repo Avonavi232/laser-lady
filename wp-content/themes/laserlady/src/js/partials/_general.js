@@ -142,4 +142,41 @@
       .add(myGeoObject);
   });
 
+  //Fixed header header__nav_fixed
+  const $nav = $('.js-nav');
+  if ($nav.length) {
+    const sticky = $nav.offset().top;
+
+    document.addEventListener('scroll', function () {
+      const
+        scrollTop = $(window).scrollTop();
+
+      if (scrollTop >= sticky && !$nav.hasClass ('header__nav_fixed')) {
+        $nav.addClass('header__nav_fixed');
+        $('body').css({
+          paddingTop: `${$nav.height()}px`
+        })
+      } else if (scrollTop < sticky && $nav.hasClass('header__nav_fixed')) {
+        $nav.removeClass('header__nav_fixed');
+        $('body').css({
+          paddingTop: 0
+        })
+      }
+    });
+  }
+
+  //Smooth scroll
+  const $menuList = $('.js-menu-list');
+  if ($menuList.length) {
+    $menuList.on("click", "a", function (event) {
+      event.preventDefault();
+
+      const
+        id = $(this).attr('href'),
+        top = $(id).offset().top;
+
+      $('body,html').animate({scrollTop: top}, 1000);
+    });
+  }
+
 })();

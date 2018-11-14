@@ -37,6 +37,11 @@ get_header();
             <p class="light">Лазерная эпиляция — это метод радикального удаления волос, с разрушением волосяных
                 фолликулов при помощи лазерного излучения (свет с одной длиной волны с высокой направленностью и
                 большой плотностью энергии).</p>
+            <div class="centered">
+                <span class="btn" data-toggle="modal" data-target="#exampleModal">
+                    <span class="btn__label">Записаться</span>
+                </span>
+            </div>
         </div>
     </section>
 
@@ -205,6 +210,12 @@ get_header();
                         </div>
                     </li>
                 </ul>
+            </div>
+            <p class="item">У вас больше не осталось вопросов? Тогда можете записаться прямо сейчас!</p>
+            <div class="item centered">
+                <span class="btn" data-toggle="modal" data-target="#exampleModal">
+                    <span class="btn__label">Записаться</span>
+                </span>
             </div>
         </div>
     </section>
