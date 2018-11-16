@@ -19,7 +19,6 @@
  */
 
 // ** Параметры MySQL: Эту информацию можно получить у вашего хостинг-провайдера ** //
-
 if ( $_SERVER['HTTP_HOST'] == 'laser-lady.loc' ) {
 	define( 'WP_SITEURL', 'http://laser-lady.loc' );
 	define( 'WP_HOME', 'http://laser-lady.loc' );
@@ -27,7 +26,7 @@ if ( $_SERVER['HTTP_HOST'] == 'laser-lady.loc' ) {
 	define( 'DB_NAME', 'laserlady' );
 	define( 'DB_USER', 'root' );
 	define( 'DB_PASSWORD', '123QWEasd' );
-} elseif ( $_SERVER['HTTP_HOST'] == 'laser-lady.ru' ) {
+} elseif ( str_replace("www.", "", $_SERVER['HTTP_HOST']) == 'laser-lady.ru' ) {
 	define( 'WP_SITEURL', 'http://laser-lady.ru' );
 	define( 'WP_HOME', 'http://laser-lady.ru' );
 
