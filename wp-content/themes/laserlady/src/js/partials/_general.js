@@ -119,7 +119,7 @@
   ymaps.ready(function () {
     // Создание карты.
     var myMap = new ymaps.Map("map", {
-        center: [59.932148064155996, 30.347569500000017],
+        center: [60.004946, 30.40393],
         zoom: 16,
         controls: ['zoomControl', 'fullscreenControl']
       },
@@ -132,7 +132,7 @@
       // Описание геометрии.
       geometry: {
         type: "Point",
-        coordinates: [59.932148064155996, 30.347569500000017]
+        coordinates: [60.004946, 30.40393]
       },
       properties: {
         hintContent: 'Laser-lady.ru'

@@ -649,7 +649,7 @@ get_header();
                                 <p class="company-info__item">Пн-Вс 10:00 - 20:00</p>
                                 <span class="company-info__separator"></span>
                                 <p class="company-info__item">г.Санкт-Петербург</p>
-                                <p class="company-info__item">Владимирский просп., д. 1</p>
+                                <p class="company-info__item">ул. Верности, 17</p>
                             </div>
                             <div class="socials-line">
                                 <div class="socials-line__item">
