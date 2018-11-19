@@ -151,3 +151,5 @@ function theme_register_nav_menu() {
 }
 
 
+//Banners feature
+require_once 'modules/banners/banners.php';
