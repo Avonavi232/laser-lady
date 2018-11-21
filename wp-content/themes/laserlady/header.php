@@ -48,10 +48,10 @@
                             </div>
                         </div>
                         <div class="company-links__item">
-                            <a href="tel:+79995501745" class="company-links__item-link">+7(999)550-17-45</a>
+                            <a href="tel:+79816986908" class="company-links__item-link">+7(981)698-69-08</a>
                         </div>
                         <div class="company-links__item">
-                            <a href="mailto:studia@gmail.com" class="company-links__item-link">studia@gmail.com</a>
+                            <a href="mailto:laser_lady@mail.ru" class="company-links__item-link">laser_lady@mail.ru</a>
                         </div>
                     </div>
                 </div>
