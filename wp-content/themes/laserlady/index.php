@@ -785,6 +785,11 @@ wp_reset_query();
     <section id="sign-up" class="sign-up sign-up-section section">
         <div class="container">
             <h2 class="section__title decorated-title">Записаться можно здесь</h2>
+
+            <div style="padding: 50px 0; border: 1px solid red">
+                <iframe style="width: 100%; height: 500px" src="https://napriem.com/a6cfb5?min=1&hideall=1"></iframe>
+            </div>
+
             <div class="sign-up__form contact-form">
 				<?php
 				echo do_shortcode( '[contact-form-7 id="10" title="Записаться можно здесь"]' )
