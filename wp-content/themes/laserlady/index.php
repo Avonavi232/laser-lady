@@ -39,51 +39,9 @@ wp_reset_query();
 ?>
 <main class="page__main">
 
-    <section class="banners-slider banners-slider-section">
-        <div class="banners-slider__container">
-            <div class="js-banners-slider">
-				<?php
-				foreach ( $banners as $banner ) {
-					?>
-                    <div>
-                        <div class="banners-slider__item banner-id-<?php echo $banner['id'] ?>">
-                        </div>
-                        <style>
-                            <?php
-                            if (isset($banner['images']['bgc'])) {
-                                ?>
-                            .banners-slider__item.banner-id-<?php echo $banner['id']?> {
-                                background-color: <?php echo $banner['images']['bgc']?>
-                            }
-
-                            <?php
-                            }
-                            ?>
-                            @media (min-width: 1200px) {
-                                .banners-slider__item.banner-id-<?php echo $banner['id']?> {
-                                    background-image: url(<?php echo $banner['images']['xl']?>)
-                                }
-                            }
-
-                            @media (min-width: 768px) and (max-width: 1199.98px) {
-                                .banners-slider__item.banner-id-<?php echo $banner['id']?> {
-                                    background-image: url(<?php echo $banner['images']['md']?>)
-                                }
-                            }
-
-                            @media (max-width: 767.98px) {
-                                .banners-slider__item.banner-id-<?php echo $banner['id']?> {
-                                    background-image: url(<?php echo $banner['images']['sm']?>)
-                                }
-                            }
-                        </style>
-                    </div>
-					<?php
-				}
-				?>
-            </div>
-        </div>
-    </section>
+    <?php
+        echo do_shortcode('[banners]');
+    ?>
 
     <section id="what-is" class="what-is what-is-section section">
         <div class="container">
@@ -730,7 +688,6 @@ wp_reset_query();
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -791,6 +748,7 @@ wp_reset_query();
             </div>
 
             <div class="sign-up__form contact-form">
+                Возникли проблемы? Оставьте свой номер телефона, и мы вам обязательно перезвоним!
 				<?php
 				echo do_shortcode( '[contact-form-7 id="10" title="Записаться можно здесь"]' )
 				?>

@@ -78,7 +78,7 @@
                     <li class="menu-list__item">
                         <a href="#contacts" class="menu-list__item-link">контакты</a>
                     </li>
-                    <li class="menu-list__item accent">
+                    <li class="menu-list__item">
                         <a href="#sign-up" class="menu-list__item-link">записаться</a>
                     </li>
                 </ul>

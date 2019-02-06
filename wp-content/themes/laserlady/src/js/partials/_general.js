@@ -179,4 +179,73 @@
     });
   }
 
+
+
+  const contentBlocks = Array.prototype.slice.call(document.querySelectorAll('.js-truncated-content'));
+
+  if (contentBlocks.length) {
+    contentBlocks.forEach(contentBlock => {
+      const
+        btn = contentBlock.querySelector('.js-truncated-content-readmore'),
+        btnHideText = btn.dataset['hideText'].trim(),
+        btnDefaultText = btn.textContent.trim(),
+        textContainer = contentBlock.querySelector('.js-truncated-content-text'),
+        contentLength = contentBlock.dataset['contentLength'] || 100;
+
+      if (!textContainer) return;
+
+      const text = $(textContainer).html();
+
+      if ($(textContainer).text().length > contentLength) {
+        $(btn).css({display: 'inline-block'});
+
+        const triggers = $(contentBlock).find('.js-truncated-content-trigger');
+
+        const excerpt = text.slice(0, contentLength) + '...';
+
+        $(textContainer).html(excerpt);
+        let isExcerpt = true;
+
+        triggers.on('click', function () {
+          if (isExcerpt) {
+            $(textContainer).html(text);
+            $(btn).text(btnHideText);
+            isExcerpt = false;
+          } else {
+            $(textContainer).html(excerpt);
+            $(btn).text(btnDefaultText);
+            isExcerpt = true;
+          }
+        });
+      }
+
+      $(textContainer).attr('style', null);
+    });
+  }
+
+
 })();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

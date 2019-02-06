@@ -59,10 +59,11 @@ $m-element-block-mob: 40px
 .item
   margin-top: 1.5em
 
-.link
-  color: $accent
+a
   border-bottom: 1px solid transparent
-  &:hover, &:active, &:visited, &:focus
+  &:active, &:visited, &:focus
+    color: inherit
+  &:hover
     color: $accent
 
   &:hover
@@ -89,10 +90,10 @@ body
 
 //Button
 .btn
-  background-color: transparent
+  background-color: $accent-lighter
   position: relative
-  color: $accent-lighter
-  border: 1px solid $accent-lighter
+  color: white
+  border: 1px solid transparent
   display: inline-block
   transition: all .2s
   &__label
@@ -121,8 +122,8 @@ body
   &:hover
     text-decoration: none
     cursor: pointer
-    color: white
-    background-color: $accent-lighter
+    //color: $accent-lighter
+    background-color: darken($accent-lighter, 15%)
 
     .btn__label
       color: inherit
@@ -152,6 +153,12 @@ body
 
 .milk-bg
   background-color: #fcfcfc
+
+.el
+  &:not(:first-child)
+    margin-top: 1.5em
+  &:not(:last-child)
+    margin-bottom: 1.5em
 
 //Slick slider outline fix
 .slick-slide
@@ -310,9 +317,8 @@ body
   &__item.accent
     color: $accent-lighter
   &__item-link
-    &, &:active, &:focus, &:visited
-      color: inherit
-      text-transform: uppercase
+    color: inherit
+    text-transform: uppercase
 
 //Banners-slider
 .banners-slider
@@ -398,20 +404,18 @@ body
 .benefits-section
   @include adaptibe-bg('public/img/bg_3')
   background-size: cover
+  &__decor-img
+    img
+      max-width: 100%
 
 .benefits
   list-style-type: none
-  display: flex
-  flex-wrap: wrap
-  align-items: flex-start
-  justify-content: center
   padding-left: 0
   margin: 30px -15px -30px
   counter-reset: my-awesome-counter
   &__item
-    flex: 0 0 33%
     padding: 0 15px
-    margin-bottom: 30px
+    margin-bottom: 2.5em
     counter-increment: my-awesome-counter
     position: relative
     &:before
@@ -425,10 +429,7 @@ body
       top: 0
       left: 0
       transform: translate(-10%, -50%)
-    @include media-breakpoint-down(sm)
-      flex-basis: 50%
     @include media-breakpoint-down(xs)
-      flex-basis: 100%
       &:before
         left: 22px
 
@@ -446,6 +447,13 @@ body
 
   &__item-content
     margin-top: 15px
+
+  &__item-readmore
+    position: relative
+    z-index: 10
+    color: $accent
+    &:hover
+      cursor: pointer
 
 //Myths
 @mixin colored-chevron($color)
@@ -508,6 +516,10 @@ body
       font-size: (16/14)#{'em'}
 
 //FAQ
+.faq-section
+  &__decor-img
+    img
+      max-width: 100%
 .faq
   @include adaptibe-bg('public/img/bg_5')
   background-size: cover
@@ -571,6 +583,7 @@ body
         border-bottom-color: $text
     .answer
       display: none
+      text-align: justify
 
 //Masters
 .masters-section
@@ -835,6 +848,15 @@ body
 .sign-up-section
   @include adaptibe-bg('public/img/bg_2')
   background-size: cover
+
+.sign-up
+  &__napriem
+    padding: 2em 0
+  iframe
+    height: 590px
+    width: 100%
+    border: none
+    overflow-y: auto 
 
 .contact-form
   .wpcf7-list-item

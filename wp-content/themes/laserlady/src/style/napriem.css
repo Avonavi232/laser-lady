@@ -1,0 +1,16 @@
+body {background-color: transparent; border: none}
+.modal {border: none; box-shadow: none}
+body.modal-open {overflow: hidden}
+
+.CompanyIndex  .AboutCompanyButtonWrapper ,
+.CompanyIndex  #GoogleMapId ,
+.CompanyIndex .Presentation ,
+.CompanyIndex .Presentation ~ *,
+.CompanyIndex #hrAddress,
+.CompanyIndex #hrAddress ~ hr,
+.CompanyIndex .ContactsData,
+.СompanyMobile .PinToDeviceScreen ,
+.СompanyMobile .page-box-content > .container > .row:first-child ,
+.СompanyMobile .ShowAdditionalInfo {
+    display: none
+}

@@ -153,3 +153,9 @@ function theme_register_nav_menu() {
 
 //Banners feature
 require_once 'modules/banners/banners.php';
+
+//Shortcodes
+require_once 'modules/shortcodes.php';
+
+//Disable visual editor
+add_filter( 'user_can_richedit', '__return_false' );
