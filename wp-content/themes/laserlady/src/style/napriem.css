@@ -1,16 +1,47 @@
-body {background-color: transparent; border: none}
-.modal {border: none; box-shadow: none}
-body.modal-open {overflow: hidden}
+body {
+    background-color: transparent;
+    border: none
+}
 
-.CompanyIndex  .AboutCompanyButtonWrapper ,
-.CompanyIndex  #GoogleMapId ,
-.CompanyIndex .Presentation ,
-.CompanyIndex .Presentation ~ *,
-.CompanyIndex #hrAddress,
-.CompanyIndex #hrAddress ~ hr,
-.CompanyIndex .ContactsData,
-.СompanyMobile .PinToDeviceScreen ,
-.СompanyMobile .page-box-content > .container > .row:first-child ,
+.modal {
+    border: none;
+    box-shadow: none
+}
+
+body.modal-open {
+    overflow: hidden
+}
+
+.CompanyIndex .TitleCompanyName {
+    display: none
+}
+.CompanyIndex .AboutCompanyButtonWrapper {
+    display: none
+}
+.CompanyIndex #GoogleMapId {
+    display: none
+}
+.CompanyIndex .Presentation {
+    display: none
+}
+.CompanyIndex .Presentation ~ * {
+    display: none
+}
+.CompanyIndex #hrAddress {
+    display: none
+}
+.CompanyIndex #hrAddress ~ hr {
+    display: none
+}
+.CompanyIndex .ContactsData {
+    display: none
+}
+.СompanyMobile .PinToDeviceScreen {
+    display: none
+}
+.СompanyMobile .page-box-content > .container > .row:first-child {
+    display: none
+}
 .СompanyMobile .ShowAdditionalInfo {
     display: none
 }
