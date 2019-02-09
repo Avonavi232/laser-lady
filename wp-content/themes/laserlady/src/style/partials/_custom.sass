@@ -407,6 +407,7 @@ body
   &__decor-img
     img
       max-width: 100%
+      max-height: 80vh
 
 .benefits
   list-style-type: none
@@ -487,7 +488,7 @@ body
       width: 20px
       height: 20px
       background-size: cover
-      @include colored-chevron($text)
+      @include colored-chevron(rgba($text, 0.99999))
       &:hover, &:focus
         outline: 0
       &:hover
@@ -520,6 +521,7 @@ body
   &__decor-img
     img
       max-width: 100%
+      max-height: 80vh
 .faq
   @include adaptibe-bg('public/img/bg_5')
   background-size: cover
@@ -605,7 +607,7 @@ body
       width: 20px
       height: 20px
       background-size: cover
-      @include colored-chevron($accent)
+      @include colored-chevron(rgba($accent, 0.99999))
       &:hover, &:focus
         outline: 0
       &:hover
@@ -694,6 +696,13 @@ body
   @include adaptibe-bg('public/img/bg_6')
   background-position: center bottom
   background-size: cover
+  &__decor-img
+    img
+      max-width: 100%
+      max-height: 80vh
+    @include media-breakpoint-down(md)
+      &
+        display: none
 
 .prices
   &__slider
@@ -707,10 +716,10 @@ body
       border: none
       font-size: 0
       padding: 0
-      width: 20px
-      height: 20px
+      width: 35px
+      height: 35px
       background-size: cover
-      @include colored-chevron($accent)
+      @include colored-chevron(rgba($accent, 0.99999))
       &:hover, &:focus
         outline: 0
       &:hover
@@ -721,7 +730,7 @@ body
       margin-right: 20px
       transform: rotate(180deg)
     .slick-arrow.slick-disabled
-      @include colored-chevron(lighten($accent, 20%))
+      @include colored-chevron(rgba(lighten($accent, 20%), 0.99999))
       &:hover
         cursor: default
     .slick-dots
@@ -741,6 +750,7 @@ body
     padding: 0 1em
 
 .prices-table
+  padding: 1px
   table
     width: 100%
   thead
@@ -749,70 +759,25 @@ body
     font-size: 1.25em
     font-family: 'Roboto', sans-serif
     text-transform: uppercase
-  th
-    font-weight: 500
-    padding: .5em 1em
-    text-align: left
-    white-space: nowrap
-    &:not(:first-child)
-      text-align: center
+    border: 1px solid $accent
   tbody
-    position: relative
-    tr
-      padding-left: .5em
-      &:first-child
-        td
-          &:first-child
-            &:before
-              top: 20%
-      &:last-child
-        td
-          &:first-child
-            &:before
-              bottom: 20%
-      &:not(:last-child)
-        td
-          &:after
-            content: ''
-            display: block
-            border-bottom: 1px solid $accent
-            position: absolute
-            bottom: 0
-            left: 0
-            right: 0
-    td
-      padding: 0
-      position: relative
-      max-width: 25vw
-      vertical-align: baseline
-      &.middle
-        vertical-align: middle
-      .content
-        display: inline-block
-        padding: .5em 1em .5em 1.2em
-      .bold
-        font-weight: bold
-      .centered
-        text-align: center
-        width: 100%
-        display: inline-block
-      .red
-        color: red
-      &:first-child
-        padding-left: 1.2em
-        .content
-          padding-left: 0
-        &:before
-          content: ''
-          display: inline-block
-          position: absolute
-          left: 0
-          top: 0
-          bottom: 0
-          width: 1px
-          border-left: 1px solid $accent
-      &:not(:first-child)
-        text-align: center
+    border: 1px solid $accent
+  th, td
+    padding: .7rem 1.2rem
+  td
+    border: 1px solid $accent
+  th:nth-child(2),
+  td:nth-child(2)
+    text-align: center
+
+  .bold
+    font-weight: bold
+  .centered
+    text-align: center
+    width: 100%
+    display: inline-block
+  .red
+    color: red
 
 .contacts-section
   @include adaptibe-bg('public/img/bg_3')
@@ -949,7 +914,11 @@ body
 
 
 
-
+#test
+  width: 200px
+  height: 200px
+  border: 1px solid red
+  flex: 0 0 auto
 
 
 
