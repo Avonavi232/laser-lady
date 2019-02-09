@@ -102,7 +102,7 @@
     const settings = {
       autoplay: false,
       autoplaySpeed: 3000,
-      slidesToShow: 2,
+      slidesToShow: 1,
       slidesToScroll: 1,
       arrows: true,
       dots: true,
@@ -166,14 +166,16 @@
   }
 
   //Smooth scroll
-  const $menuList = $('.js-menu-list');
-  if ($menuList.length) {
-    $menuList.on("click", "a", function (event) {
+  const $smoothAnchors = $('.js-menu-list, .js-smooth-anchor');
+  if ($smoothAnchors.length) {
+    $smoothAnchors.on("click", "a", function (event) {
       event.preventDefault();
-
       const
-        id = $(this).attr('href'),
-        top = $(id).offset().top;
+        targetId = $(this).attr('href'),
+        $target = targetId && $(targetId);
+      if (!$target) return;
+
+      const top = $target.offset().top;
 
       $('body,html').animate({scrollTop: top}, 1000);
     });
@@ -223,7 +225,16 @@
     });
   }
 
-
+  const iframeContainer = $('.js-napriem');
+  if (iframeContainer.length){
+    let napriemUrl;
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      napriemUrl = "https://napriem.com/m/a6cfb5?min=1"
+    } else {
+      napriemUrl = "https://napriem.com/a6cfb5?min=1&hideall=1"
+    }
+    iframeContainer.append(`<iframe src="${napriemUrl}"></iframe>`);
+  }
 })();
 
 
