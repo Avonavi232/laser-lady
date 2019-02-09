@@ -42,22 +42,6 @@ if ( file_exists( ABSPATH . $logo ) ) {
     </div>
   </div>
 </footer>
-
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div class="modal-form-container">
-                    <h2 class="modal-form-container__title decorated-title">Записаться можно здесь</h2>
-                    <div class="container-fluid">
-			                <?php echo do_shortcode('[contact-form-7 title="Modal form"]')?>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 </div>
 
 <?php wp_footer(); ?>
