@@ -120,10 +120,10 @@ function ll_benefits_shortcode( $atts, $content = null ) {
         <div class="container">
             <h2 class="section__title decorated-title"><?php echo $a['title'] ?></h2>
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-md-8">
                     <ol class="benefits"><?php echo do_shortcode( $content ) ?></ol>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-md-4">
                     <div class="benefits-section__decor-img">
 											<?php echo $a['img'] ?>
                     </div>
@@ -219,22 +219,22 @@ function ll_faq_shortcode( $atts, $content = null ) {
             <h2 class="section__title decorated-title"><?php echo $a['title'] ?></h2>
             <div class="faq__content">
                 <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-md-8">
                         <ul class="faq-questions js-faq-questions">
 													<?php echo do_shortcode( $content ) ?>
                         </ul>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-md-4">
                         <div class="faq-section__decor-img">
-	                        <?php echo $a['img'] ?>
+													<?php echo $a['img'] ?>
                         </div>
                     </div>
                 </div>
                 <p class="el">У вас больше не осталось вопросов? Тогда можете записаться прямо сейчас!</p>
                 <div class="el centered">
-			<span class="btn" data-toggle="modal" data-target="#exampleModal">
-				<span class="btn__label">Записаться</span>
-			</span>
+                    <span class="btn js-smooth-anchor">
+                        <a href="#sign-up" class="btn__label">Записаться</a>
+                    </span>
                 </div>
             </div>
         </div>
@@ -321,7 +321,7 @@ function ll_masters_shortcode( $atts, $content = null ) {
 add_shortcode( 'masters', 'll_masters_shortcode' );
 
 
-//Мастера
+//Prices
 function ll_price_table_shortcode( $atts, $content = null ) {
 	ob_start();
 	?>
@@ -338,15 +338,25 @@ add_shortcode( 'table', 'll_price_table_shortcode' );
 
 function ll_prices_shortcode( $atts, $content = null ) {
 	$a = shortcode_atts( array(
-		'title' => 'Стоимость'
+		'title' => 'Стоимость',
+		'img'   => ''
 	), $atts );
 	ob_start();
 	?>
     <section id="prices" class="prices prices-section section">
         <div class="container">
             <h2 class="section__title decorated-title"><?php echo $a['title'] ?></h2>
-            <div class="prices__slider js-prices-slider">
-							<?php echo do_shortcode( $content ) ?>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="prices__slider js-prices-slider">
+											<?php echo do_shortcode( $content ) ?>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="prices-section__decor-img">
+											<?php echo $a['img'] ?>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
